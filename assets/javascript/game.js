@@ -4,16 +4,16 @@ var guessesLeft = 10;
 
 var randomLetters= ["b", "c", "h", "l", "m", "s", "w", "o"];
 
-console.log (randomLetters);
+for (i=0; i<randomLetters.length; i++){
+    console.log(randomLetters[i]);
+}
 
 document.onkeyup = function (event) {
     var userGuess = event.key.toLowerCase();
     
-    for (i=0; i<randomLetters.length; i++){
-        te
-    }
     
-    if(userGuess === randomLetters){
+    if(randomLetters.indexOf("userGuess") !==-1){
+        console.log("userGuess");
         wins++;
     }
     
