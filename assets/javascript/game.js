@@ -12,8 +12,8 @@ document.onkeyup = function (event) {
     var userGuess = event.key.toLowerCase();
     
     
-    if(randomLetters.indexOf("userGuess") !==-1){
-        console.log("userGuess");
+    if(randomLetters.indexOf(userGuess) !==-1){
+        console.log(userGuess);
         wins++;
     }
     
