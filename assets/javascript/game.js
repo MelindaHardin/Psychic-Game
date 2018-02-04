@@ -1,6 +1,12 @@
 var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
+var lettersRight=[];
+
+var lettersGuessed;
+var lettersWrong=[];
+
+
 
 var randomLetters= ["b", "c", "h", "l", "m", "s", "w", "o"];
 
@@ -15,27 +21,39 @@ document.onkeyup = function (event) {
     if(randomLetters.indexOf(userGuess) !==-1){
         console.log(userGuess);
         wins++;
+        lettersRight.push(userGuess);
     }
     
     else{
         guessesLeft--;
+        lettersWrong.push(userGuess);
+        
     }
 
     if(guessesLeft === 0){
-        losses++
-        alert("game over");
+        losses++;
+        var nextGame = confirm("Want to play agian?");
+        if (nextGame === true){
+            
+
+        }
+        else{
+            alert ("See you next time!");
+            
+        }
     }
+
+    
 
     var html =
 
+    "<p>Letters Guessed:" + lettersWrong + "</p>" + 
     "<p>Guesses Left:" + guessesLeft + "</p>" +
-    "<p>Wins:" + wins + "</p>" +
+    "<p>Letters Right:" + lettersRight + "</p>" +
+    "<p>Wins:" + wins + "</p>"  +
     "<p>Losses:" + losses + "</p>";
 
     document.getElementById("game").innerHTML=html;
 
 
-    /*document.getElementById('wins').innerHTML = "Wins: " + wins;
-    document.getElementById('losses').innerHTML = "losses: " + losses;
-    document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;*/
 }
